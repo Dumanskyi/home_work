@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>Hello, World</title>
+</head>
+
+<body>
+
+    <script>
+    	
+    	function draw() {      
+
+            var height = + prompt('Введите сторону треугольника');
+            var triangleSymbol = prompt ('Введите символ');
+
+            function triangle(){
+                var triangle = '';
+                var star = '';
+
+                for (var i = 0; i < height; i++) {
+
+                    star = star + triangleSymbol;
+                    triangle = ( triangle + '\n' + star);
+
+                }
+
+                console.log(triangle);
+                }
+
+                while (triangleSymbol.length !== 1){
+                    alert('Вводимое значение должно содержать только 1 символ');
+                    triangleSymbol = prompt ('Введите символ');
+                }
+
+                triangle();
+
+        }
+
+        draw();    
+
+    </script>
+    
+</body>
+
+</html>
