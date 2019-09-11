@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>Hello, World</title>
+</head>
+
+<body>
+
+    <script>
+        function fillUpString (string, stringLength, fillUpSymbol, isReverse) {
+
+            fillUpSymbol.toString;
+
+            if (fillUpSymbol.length == 1) {
+                
+                if (stringLength >= string.length) {
+
+                    var length = string.length;
+                    var symbolPart = '';
+
+                    for ( var i = 1; i <= ( stringLength - length); i++ ) {
+                       symbolPart = symbolPart + fillUpSymbol; 
+                    }
+
+                    if (isReverse) {
+                        return symbolPart + string;
+                    } else {
+                        return string + symbolPart;
+                    }
+
+                     
+                } else {
+                    return 'Наша строка уже и так больше заданного числа';
+                }
+
+            } else {
+                return 'Неправильное значение, должен быть только 1 символ заполнения';
+            }
+        }
+
+        console.log (fillUpString('Roy', 9, 'i', true));
+
+    </script>
+    
+</body>
+
+</html>
