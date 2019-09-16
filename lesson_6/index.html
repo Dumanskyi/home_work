@@ -11,17 +11,17 @@
 
     <script>
         function fillUpString (string, stringLength, fillUpSymbol, isReverse) {
+               
+            fillUpSymbol = fillUpSymbol.toString();        
 
-            fillUpSymbol.toString;
-
-            if (fillUpSymbol.length == 1) {
+            if (fillUpSymbol.length === 1) {
                 
                 if (stringLength >= string.length) {
 
                     var length = string.length;
                     var symbolPart = '';
 
-                    for ( var i = 1; i <= ( stringLength - length); i++ ) {
+                    for (var i = 1; i <= ( stringLength - length); i++ ) {
                        symbolPart = symbolPart + fillUpSymbol; 
                     }
 
@@ -41,8 +41,11 @@
             }
         }
 
-        console.log (fillUpString('Roy', 9, 'i', true));
 
+        console.log (fillUpString('sdfdfsd', 19, '7', true));
+        
+                
+        
     </script>
     
 </body>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>Hello, World</title>
+</head>
+
+<body>
+
+    <script>
+    	
+    	 // найти результат суммирования элементов массива, но в случае, если элемент отрицательный - делим его на 2, а в случае, когда положительный - умножаем на 2.
+    	
+    	var arr = [-246, 753, -468, 475, -683, 476, -583, 746, -581];
+    	var sum = 0;
+
+    	arr.forEach(function(element){
+    		if (element < 0) {
+    			element /= 2;
+    		} else if (element > 0) {
+    			element *= 2;
+    		}
+
+    		sum += element;
+    	});
+
+    	console.log(sum);
+
+    </script>
+    
+</body>
+
+</html>
