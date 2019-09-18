@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>Hello, World</title>
+</head>
+
+<body>
+
+    <script>
+    	
+
+        let arr = [16,-37,54,-4,72,-56,47,4,-16,25,-37,46,4,-51,27,-63,4,-54,76,-4,12,-35,4,47];
+        console.log(`Исходный массив ${arr}`);
+        console.log('-----------');
+        console.log('\n');
+
+        // 1) Найти сумму и количество положительных элементов.
+        
+        let arrPositive = arr.filter((element) => element > 0);
+        let sum = arrPositive.reduce((total, element) => {
+            return (total + element)
+        });
+
+        console.log('1 задание');
+        console.log(`Сумма положительных элементов : ${sum}`);
+        console.log(`Количество положительных элементов : ${arrPositive.length}`);
+        console.log('-----------');
+          
+        // 2) Найти минимальный элемент массива и его порядковый номер.
+
+        let sorted = arr.slice().sort(function(a, b){
+            if (a > b) return 1;
+            if (a < b) return -1;
+        });
+
+        let minElement = sorted[0];
+        let minElementIndex = arr.indexOf(minElement);
+
+        console.log('2 задание');
+        console.log(`Минимальный элемент : ${minElement}`);
+        console.log(`Индекс минимального элемента : ${minElementIndex}`);
+        console.log('-----------');
+
+        // 3) Найти максимальный элемент массива и его порядковый номер.
+        
+        sorted = arr.slice().sort(function(a, b){
+            if (a > b) return 1;
+            if (a < b) return -1;
+        });
+
+        let maxElement = sorted[arr.length-1];
+        let maxElementIndex = arr.indexOf(maxElement);
+
+        console.log('3 задание');
+        console.log(`Максимальный элемент : ${maxElement}`);
+        console.log(`Индекс максимального элемента : ${maxElementIndex}`);
+        console.log('-----------');
+        
+        // 4) Определить количество отрицательных элементов.
+
+        let negativeCounter = 0;
+
+        negativeCounter = arr.reduce((counter, element) => {
+            
+            if (element < 0) {
+                counter = counter + 1;
+            }
+            return counter;   
+        }, 0);
+
+        console.log('4 задание');
+        console.log(`Количество отрицательных элементов : ${negativeCounter}`);
+        console.log('-----------');
+
+         // 5) Найти количество нечетных положительных элементов.
+
+        let oddPositiveCounter = arr.reduce((counter, element) => {
+            
+            if ( (element > 0) && (element % 2 === 1) ) {
+                counter = counter + 1;
+            }
+            return counter;   
+        }, 0);
+
+        console.log('5 задание');
+        console.log(`Количество нечетных положительных элементов : ${oddPositiveCounter}`);
+        console.log('-----------');
+        
+        // 6) Найти количество четных положительных элементов.
+
+        let evenPositiveCounter = arr.reduce((counter, element) => {
+            
+            if ( (element > 0) && (element % 2 === 0) ) {
+                counter = counter + 1;
+            }
+            return counter;   
+        }, 0);
+
+        console.log('6 задание');
+        console.log(`Количество четных положительных элементов : ${evenPositiveCounter}`);
+        console.log('-----------');
+
+        // 7) Найти сумму четных положительных элементов.
+
+        let sumEvenPositive = 0;
+
+        arr.forEach(function(element){        
+            if ( (element > 0) &&  (element % 2 === 0) ) {
+               sumEvenPositive += element 
+           }});
+
+        console.log('7 задание');
+        console.log(`Сумма четных положительных элементов : ${sumEvenPositive}`);
+        console.log('-----------');
+
+        // 8) Найти сумму нечетных положительных элементов.
+
+        let sumOddPositive = 0;
+
+        arr.forEach(function(element){        
+            if ( (element > 0) &&  (element % 2 === 1) ) {
+               sumOddPositive += element 
+           }});
+
+        console.log('8 задание');
+        console.log(`Сумма нечетных положительных элементов : ${sumOddPositive}`);
+        console.log('-----------');
+
+        // 9) Найти произведение положительных элементов.
+
+        let multiplyPositive = arr.reduce((multiply, element) => {
+            
+            if (element > 0) {
+                multiply *= element;
+            }
+            return multiply;   
+        }, 1);
+
+        console.log('9 задание');
+        console.log(`Произведение положительных элементов элементов : ${multiplyPositive}`);
+        console.log('-----------');
+
+        // 10) Определить количество элементов, равных 4.
+
+        let counterEqualFour = 0
+
+        arr.forEach(function(element){        
+            if (element === 4) {counterEqualFour++};
+        });
+        console.log('10 задание');
+        console.log(`Количество элементов, равных 4 : ${counterEqualFour}`);
+        console.log('-----------');
+
+
+        // 11) Найти наибольший среди элементов массива, остальные обнулить.
+
+        sorted = arr.slice().sort(function(a, b){
+            if (a > b) return 1;
+            if (a < b) return -1;
+        });
+
+        maxElement = sorted[arr.length-1];
+
+        let newArr = arr.map(function(element){
+            if (element != maxElement) {
+                delete[arr.indexOf(element)];
+            } else { return maxElement};
+        });
+
+        console.log('11 задание');
+        console.log(`Новый массив : ${newArr}`);
+        console.log('-----------');
+
+        // 12) Вычислить разность соответствующих элементов массивов и записать в новый массив.
+
+        let arr1 = [46,4,-51,27,-63,4,-54,76,-4,12,-35,4,47,16,-37,54,-4,72,-56,47,4,-16,25,-37];
+
+        let substructArr = [];
+        for (let i = 0; i <= arr.length - 1; i++){
+             
+            substructArr.push(arr[i] - arr1[i]);
+        };
+
+        console.log('12 задание');
+        console.log(`Исходный массив ${arr}`);
+        console.log('-----------');
+        console.log(`Второй массив ${arr1}`);
+        console.log('-----------');
+        console.log(`Массив разностей : ${substructArr}`);
+        console.log('-----------');
+
+    </script>
+    
+</body>
+
+</html>
