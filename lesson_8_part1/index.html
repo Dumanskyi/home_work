@@ -10,7 +10,6 @@
 <body>
 
     <script>
-    	
 
         let arr = [16,-37,54,-4,72,-56,47,4,-16,25,-37,46,4,-51,27,-63,4,-54,76,-4,12,-35,4,47];
         console.log(`Исходный массив ${arr}`);
@@ -64,10 +63,10 @@
         let negativeCounter = 0;
 
         negativeCounter = arr.reduce((counter, element) => {
-            
             if (element < 0) {
                 counter = counter + 1;
             }
+
             return counter;   
         }, 0);
 
@@ -78,10 +77,10 @@
          // 5) Найти количество нечетных положительных элементов.
 
         let oddPositiveCounter = arr.reduce((counter, element) => {
-            
             if ( (element > 0) && (element % 2 === 1) ) {
                 counter = counter + 1;
             }
+
             return counter;   
         }, 0);
 
@@ -92,10 +91,10 @@
         // 6) Найти количество четных положительных элементов.
 
         let evenPositiveCounter = arr.reduce((counter, element) => {
-            
             if ( (element > 0) && (element % 2 === 0) ) {
                 counter = counter + 1;
             }
+
             return counter;   
         }, 0);
 
@@ -166,7 +165,8 @@
 
         let newArr = arr.map(function(element){
             if (element != maxElement) {
-                delete[arr.indexOf(element)];
+                return 0;
+                // delete[arr.indexOf(element)];
             } else { return maxElement};
         });
 
@@ -179,8 +179,7 @@
         let arr1 = [46,4,-51,27,-63,4,-54,76,-4,12,-35,4,47,16,-37,54,-4,72,-56,47,4,-16,25,-37];
 
         let substructArr = [];
-        for (let i = 0; i <= arr.length - 1; i++){
-             
+        for (let i = 0; i <= arr.length - 1; i++){ 
             substructArr.push(arr[i] - arr1[i]);
         };
 
