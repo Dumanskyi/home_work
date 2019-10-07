@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>Hello, World</title>
+</head>
+
+<body>
+
+    <script>
+
+      const arr = [1,2,3,4,5,7,7];
+      const arr2 = [1,2,3,4,5];
+
+      let isArraySame = function(array, array2){
+
+      (array < array2) ? ( array2 = array2.slice(0, array.length) ) : ( array = array.slice(0, array2.length) );
+
+      compareArray = array.reduce( (marker, element, index) => {
+        if (element !== array2[index]) {
+            (marker = false)
+        }
+            return marker;   
+        }, true);
+        return compareArray;
+        }
+      // Выводит true, если массивы совпадают и false если не совпадают. 
+      // Если массивы разной длинны - функция приводит больший массив к длинне меньшего.
+      console.log(isArraySame(arr, arr2));
+
+    </script>
+    
+</body>
+
+</html>
+
+<!-- console.log( array2[array2.indexOf(element)] );
+console.log(element); -->
