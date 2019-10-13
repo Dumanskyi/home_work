@@ -18,36 +18,47 @@
             this.performance = [,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,],
             this.attendance = [,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,],
             this.counterMarks = 0,
-            this.counterAttendance = 0,
+            this.counterAttendance = 0 
 
-            this.present = function() {
+        };
+
+        Student.prototype.present = function() {
               if (this.counterAttendance === 30){
                 console.log('Занятия окончены')
               } else if (this.counterAttendance < 30){
                 this.attendance[this.counterAttendance] = true
                 this.counterAttendance++
               }
-            },
+        };
 
-            this.absent = function() {
+        Student.prototype.absent = function() {
               if (this.counterAttendance === 30){
                 console.log('Занятия окончены')
               } else if (this.counterAttendance < 30){
                 this.attendance[this.counterAttendance] = false
                 this.counterAttendance++
               }
-            },
+        };
 
-            this.mark = function(n) {
+        Student.prototype.mark = function(n) {
               if (this.counterMarks === 30){
                 console.log('Студент выполнил все задания')
               } else if (this.counterMarks < 30){
                 this.performance[this.counterMarks] = n
                 this.counterMarks++
               }
-            }
+        };
 
-            this.summary = function(){
+        Student.prototype.mark = function(n) {
+              if (this.counterMarks === 30){
+                console.log('Студент выполнил все задания')
+              } else if (this.counterMarks < 30){
+                this.performance[this.counterMarks] = n
+                this.counterMarks++
+              }
+        };
+
+        Student.prototype.summary = function(){
               let averageMark = this.performance.reduce(function(total, el){
                 return total += el;
               })
@@ -65,9 +76,8 @@
               } else if (averageMark < 9 && averageAttendance < 0.9){
                 return `Твоя средняя оцена ${averageMark}, а посещаемость ${averageAttendance} - Редиска`
               }
-            }
+        };
 
-        }
 
         const harry = new Student('Harry', 'Potter', 1987);
 
