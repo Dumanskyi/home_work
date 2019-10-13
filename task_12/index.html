@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hello, World</title>
+</head>
+
+<body>
+
+    <script>
+
+        const Student = function(name, surname, bdayYear){
+
+            this.name = name,
+            this.surname = surname,
+            this.bdayYear = bdayYear,
+            this.performance = [,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,],
+            this.attendance = [,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,],
+            this.counterMarks = 0,
+            this.counterAttendance = 0,
+
+            this.present = function() {
+              if (this.counterAttendance === 30){
+                console.log('Занятия окончены')
+              } else if (this.counterAttendance < 30){
+                this.attendance[this.counterAttendance] = true
+                this.counterAttendance++
+              }
+            },
+
+            this.absent = function() {
+              if (this.counterAttendance === 30){
+                console.log('Занятия окончены')
+              } else if (this.counterAttendance < 30){
+                this.attendance[this.counterAttendance] = false
+                this.counterAttendance++
+              }
+            },
+
+            this.mark = function(n) {
+              if (this.counterMarks === 30){
+                console.log('Студент выполнил все задания')
+              } else if (this.counterMarks < 30){
+                this.performance[this.counterMarks] = n
+                this.counterMarks++
+              }
+            }
+
+            this.summary = function(){
+              let averageMark = this.performance.reduce(function(total, el){
+                return total += el;
+              })
+              averageMark = +(averageMark / this.counterMarks).toFixed(2);
+              
+              let averageAttendance = this.attendance.reduce(function(total, el){
+                return total += +el;
+              })
+              averageAttendance = +(averageAttendance / this.counterAttendance).toFixed(2);
+
+              if (averageMark >= 9 && averageAttendance >= 0.9){
+                return `Твоя средняя оцена ${averageMark}, а посещаемость ${averageAttendance} - Ути какой молодчинка`
+              } else if ((averageAttendance < 0.9 && averageMark >= 9) || (averageAttendance > 0.9 && averageMark <= 9)){
+                return `Твоя средняя оцена ${averageMark}, а посещаемость ${averageAttendance} - Норм, но могло быть и лучше`
+              } else if (averageMark < 9 && averageAttendance < 0.9){
+                return `Твоя средняя оцена ${averageMark}, а посещаемость ${averageAttendance} - Редиска`
+              }
+            }
+
+        }
+
+        const harry = new Student('Harry', 'Potter', 1987);
+
+
+        harry.present();
+        harry.present();
+        harry.present();
+        harry.present();
+        harry.absent();
+        harry.mark(10);
+        harry.mark(8);
+        harry.mark(10);
+        harry.mark(10);
+        harry.mark(10);
+        harry.mark(10);
+        harry.mark(10);
+        harry.mark(8);
+        harry.mark(10);
+        harry.mark(10);
+        harry.mark(10);
+        harry.mark(10);
+        harry.mark(10);
+        harry.mark(8);
+        harry.mark(10);
+        harry.mark(10);
+        harry.mark(10);
+        harry.mark(10);
+        harry.mark(10);
+        harry.mark(8);
+        harry.mark(10);
+        harry.mark(10);
+        harry.mark(10);
+        harry.mark(10);
+        harry.mark(10);
+        harry.mark(8);
+        harry.mark(10);
+        harry.mark(10);
+        harry.mark(10);
+        harry.mark(10);
+        harry.mark(10);
+        harry.present();
+        harry.present();
+        harry.present();
+        harry.present();
+        harry.absent();
+        harry.present();
+        harry.present();
+        harry.present();
+        harry.present();
+        harry.absent();
+        harry.present();
+        harry.present();
+        harry.present();
+        harry.present();
+        harry.absent();
+        harry.present();
+        harry.present();
+        harry.present();
+        harry.present();
+        harry.present();
+        harry.present();
+        harry.absent();
+        harry.present();
+        harry.present();
+        harry.present();
+        harry.present();
+
+
+        console.log(harry.attendance);
+        console.log(harry.performance);
+
+        console.log(harry.summary());
+    </script>
+
+    
+</body>
+
+</html>

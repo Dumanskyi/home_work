@@ -3,7 +3,6 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <title>Hello, World</title>
 </head>
 
@@ -24,8 +23,6 @@
         array2 = array;
         array = temp; 
         }
-
-
         result = 'не совпадают';
         for (let i = 0; i < array2.length; i++){
           for (let j = 0; j < array.length; j++){
@@ -36,9 +33,7 @@
               if ( newArr.join('') === array2.join('') ){
                 return 'совпадают';
               } 
-
             }
-
           }
         }
         return result;
@@ -51,6 +46,3 @@
 </body>
 
 </html>
-
-<!-- console.log( array2[array2.indexOf(element)] );
-console.log(element); -->
