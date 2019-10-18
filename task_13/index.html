@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hello, World</title>
+</head>
+
+<body>
+
+    <script>
+
+        let toDo = {
+
+            idNumber : 0,
+
+            notes : [],
+
+            addTask : function(someTask){
+                let uniq = 0;
+                this.notes.forEach(function(el){
+                    if (el.taskDiscription === someTask){
+                        uniq = 1;
+                    }
+                });
+
+                if (uniq === 1) {
+                    console.log('this task already exist')
+                } else {
+                    this.notes.push({
+                    taskId: this.idNumber + 1,
+                    taskDiscription: someTask,
+                    taskStatus: 'pending',
+                    timeOfCreation: new Date().getMilliseconds(500)
+                    });
+                    this.idNumber++;
+                }
+            },
+
+            makeItDone: function(id){
+                this.notes.forEach(function(el){
+                    if (el.taskId === id) {
+                        el.taskStatus = 'done'
+                    }
+                });
+            },
+
+            makeItPending: function(id){
+                this.notes.forEach(function(el){
+                    if (el.taskId === id) {
+                        el.taskStatus = 'pending'
+                    }
+                });
+            },
+
+            changeTaskDiscription: function(id, newTask, confirmation){
+                let arr = this.notes;
+                let uniq = 0;
+                arr.forEach(function(el){
+                    if (el.taskDiscription === newTask){
+                        uniq = 1;
+                        console.log('this task already exist');
+                    }
+                }); 
+
+                if (uniq === 0) {
+                    if (confirmation === 'confirm'){
+                        arr.forEach(function(el){
+                            if (el.taskId === id){
+                                    el.taskDiscription = newTask;
+                                }
+                        })  
+                    } 
+                }
+            },
+
+            deleteTask: function(id, confirmation){
+                if (confirmation === 'confirm'){
+                    this.notes.forEach(function(el, index, arr){
+                        if (el.taskId === id){
+                            arr.splice(index, 1);
+                        }
+                    })
+                }
+            },
+
+            getTasksTotal: function(){
+                console.log(`Всего задач в списке - ${this.notes.length}`)
+            },
+
+            getTasksDone : function(){
+                tasksDone = this.notes.reduce(function(ac, el){
+                    if (el.taskStatus === 'done'){
+                        ac++
+                    }
+                    return ac
+                },0);
+                console.log(`Всего выполненных задач в списке - ${tasksDone}`)
+            },
+
+            getTasksPending : function(){
+                tasksPending = this.notes.reduce(function(ac, el){
+                    if (el.taskStatus === 'pending'){
+                        ac++
+                    }
+                    return ac
+                },0);
+                console.log(`Всего не выполненных задач в списке - ${tasksPending}`)
+            }  
+            
+        };
+
+        toDo.addTask('learnHTML');
+        toDo.addTask('learnCSS');
+        toDo.addTask('learnJS');
+        toDo.addTask('learnLess');
+        toDo.addTask('learnSQL');
+        toDo.addTask('learnLess');
+        toDo.makeItDone(2);
+        toDo.makeItDone(4);
+        toDo.changeTaskDiscription(4, 'learnGit', 'confirm');
+        toDo.deleteTask(3, 'confirm');
+        toDo.makeItPending(4);
+        console.log(toDo);
+        toDo.getTasksTotal();
+        toDo.getTasksDone();
+        toDo.getTasksPending();
+        
+    </script>
+
+    
+</body>
+
+</html>
