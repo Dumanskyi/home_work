@@ -12,7 +12,9 @@
 
         let toDo = {
 
-            idNumber : 0,
+            idNumber : {
+                id : 0
+            },
 
             notes : [],
 
@@ -28,12 +30,12 @@
                     console.log('this task already exist')
                 } else {
                     this.notes.push({
-                    taskId: this.idNumber + 1,
+                    taskId: this.idNumber.id + 1,
                     taskDiscription: someTask,
                     taskStatus: 'pending',
                     timeOfCreation: new Date().getMilliseconds(500)
                     });
-                    this.idNumber++;
+                    this.idNumber.id++;
                 }
             },
 
@@ -106,9 +108,17 @@
                     return ac
                 },0);
                 console.log(`Всего не выполненных задач в списке - ${tasksPending}`)
+            },
+
+            showTasks : function(){
+                this.notes.forEach(function(el){
+                    console.log(el);
+                })
             }  
             
         };
+
+        Object.freeze(toDo);
 
         toDo.addTask('learnHTML');
         toDo.addTask('learnCSS');
@@ -121,7 +131,10 @@
         toDo.changeTaskDiscription(4, 'learnGit', 'confirm');
         toDo.deleteTask(3, 'confirm');
         toDo.makeItPending(4);
-        console.log(toDo);
+        
+        // console.log(toDo.notes);
+
+        toDo.showTasks();
         toDo.getTasksTotal();
         toDo.getTasksDone();
         toDo.getTasksPending();
