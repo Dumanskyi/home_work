@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hello, World</title>
+</head>
+
+<body>
+
+    <ul>
+        <li>item - 1</li>
+        <li>item - 3</li>
+        <li>item - 4</li>
+        <li>item - 5</li>
+        <li>item - 11</li>
+        <li>item - 2</li>
+        <li>item - 6</li>
+        <li>item - 10</li>
+        <li>item - 8</li>
+        <li>item - 7</li>
+        <li>item - 9</li>
+        <li>item - 12</li>
+    </ul>
+
+    <button id='sortingButton'>sort</button>
+
+    <script>
+
+        let sort = function(){
+            const listItems = document.querySelectorAll('li');
+
+            let arr = [];
+
+            listItems.forEach(function(listItem){
+                    arr.push(+listItem.innerText.slice(7));   
+            });
+
+            for (var i = 0; i < arr.length - 1; i++) {
+                for (var j = 0; j < arr.length - 1 - i; j++) {
+                    if (arr[j] > arr[j + 1]) {
+                        var temp = arr[j];
+                        arr[j] = arr[j + 1];
+                        arr[j + 1] = temp;
+                    }
+                }
+            }
+
+            listItems.forEach(function(listItem, index){
+                listItem.innerText = listItem.innerText.substr(0,7) + arr[index];
+            });
+
+        }
+
+
+        sortingButton.onclick = sort;
+
+        
+
+    
+    </script>
+
+    
+</body>
+
+</html>

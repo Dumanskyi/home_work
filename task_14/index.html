@@ -49,7 +49,7 @@
                 }    
             }
 
-            averageMark(){
+            get averageMark(){
                 let marks = this.performance.reduce(function(total, el){
                     return total += el;
                 })
@@ -65,12 +65,12 @@
 
             summary(){
 
-                if (this.averageMark() >= 9 && this.averageAttendance() >= 0.9){
+                if (this.averageMark >= 9 && this.averageAttendance() >= 0.9){
                     return `Ути какой молодчинка`
-                } else if ((this.averageAttendance() < 0.9 && this.averageMark() >= 9) || 
-                    (this.averageAttendance() > 0.9 && this.averageMark() <= 9)){
+                } else if ((this.averageAttendance() < 0.9 && this.averageMark >= 9) || 
+                    (this.averageAttendance() > 0.9 && this.averageMark <= 9)){
                     return `Норм, но могло быть и лучше`
-                } else if (this.averageMark() < 9 && this.averageAttendance() < 0.9){
+                } else if (this.averageMark < 9 && this.averageAttendance() < 0.9){
                     return `Редиска`
                 }  
             }
@@ -142,10 +142,19 @@
         harry.present();
         harry.present();
 
-        console.log(`Средняя оценка ${harry.averageMark()}`);
+        console.log(`Средняя оценка ${harry.averageMark}`);
         console.log(`Средняя посещаемость ${harry.averageAttendance()}`);
 
+
         console.log(harry.summary());
+
+        // // заменим цвет фона на красный,
+        // document.body.style.background = "red";
+
+        // // а через 15 секунд вернём как было
+        // setTimeout(() => document.body.style.background = "green", 3000);
+
+        // setTimeout(() => document.body.style.background = "blue", 6000);
     </script>
 
     
