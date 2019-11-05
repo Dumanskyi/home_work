@@ -17,50 +17,73 @@
                 this.surname = surname,
                 this.bdayYear = bdayYear,
                 this.performance = new Array(30),
-                this.attendance = new Array(30),
-                this.counterMarks = 0,
-                this.counterAttendance = 0 
+                this.attendance = new Array(30) 
             }
 
             present(){
-                if (this.counterAttendance === 30){
+
+                let index = this.attendance.findIndex((el) => el === undefined);
+                console.log(index);
+                if (index === -1){
                 console.log('Занятия окончены')
-                } else if (this.counterAttendance < 30){
-                this.attendance[this.counterAttendance] = true
-                this.counterAttendance++
+                } else {
+                this.attendance[index] = true
                 } 
             }
 
             absent(){
-                if (this.counterAttendance === 30){
+
+                let index = this.attendance.findIndex((el) => el === undefined);
+                console.log(index);
+                if (index === -1){
                 console.log('Занятия окончены')
-                } else if (this.counterAttendance < 30){
-                this.attendance[this.counterAttendance] = false
-                this.counterAttendance++
-                }
+                } else {
+                this.attendance[index] = false;
+                } 
             }
 
             mark(n){
-                if (this.counterMarks === 30){
+
+                let index = this.performance.findIndex((el) => el === undefined);
+                if (index === -1){
                 console.log('Студент выполнил все задания')
-                } else if (this.counterMarks < 30){
-                this.performance[this.counterMarks] = n
-                this.counterMarks++
+                } else {
+                this.performance[index] = n;
                 }    
             }
 
             get averageMark(){
-                let marks = this.performance.reduce(function(total, el){
+
+                let index = this.performance.findIndex((el) => el === undefined);
+                if (index === -1){
+                    let marks = this.performance.reduce(function(total, el){
                     return total += el;
-                })
-                return +(marks / this.counterMarks).toFixed(2);
+                    })
+                    return +(marks / 30).toFixed(2);
+                } else {
+                    let marks = this.performance.reduce(function(total, el){
+                    return total += el;
+                    })
+                    return +(marks / index).toFixed(2);
+                }
+                
             }
 
             averageAttendance(){
-                let averageAttendance = this.attendance.reduce(function(total, el){
-                    return total += +el;
-                })
-                return +(averageAttendance / this.counterAttendance).toFixed(2);
+
+                let index = this.attendance.findIndex((el) => el === undefined);
+                if (index === -1){
+                    let evAttendance = this.attendance.reduce(function(total, el){
+                    return total += el;
+                    })
+                    return +(evAttendance / 30).toFixed(2);
+                } else {
+                    let evAttendance = this.attendance.reduce(function(total, el){
+                    return total += el;
+                    })
+                    return +(evAttendance / index).toFixed(2);
+                }
+                
             }
 
             summary(){
