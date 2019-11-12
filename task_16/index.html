@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hello, World</title>
+</head>
+
+<body>
+
+    <div id="allList">
+
+    </div>
+
+    <script>
+        const arr = ["red 1","red 2","red 3",["green 1",["blue 1"],"green 2","green 3","green 4"],"red 4"];
+
+        function createList(data) {
+            const ul = document.createElement('ul');
+
+            data.forEach(item => {
+                
+                if (Array.isArray(item) === false){
+                    const li = document.createElement('li');
+                    li.textContent = item;
+                    ul.appendChild(li);
+                }
+                
+                else if (Array.isArray(item)) {
+                    ul.appendChild(createList(item));
+                }
+
+            });
+
+            return ul;
+        }
+
+
+        document.querySelector('#allList').appendChild(createList(arr));
+    </script>
+
+
+</body>
+
+</html>
