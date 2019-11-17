@@ -1,0 +1,56 @@
+@media (max-width: 2560px) {
+   
+}
+
+@media (max-width: 1200px) {
+    
+}
+@media (max-width: 1440px) {
+    
+}
+@media (max-width: 1024px) {
+    
+}
+@media (max-width: 768px) {
+    
+}
+@media (max-width: 425px) {
+    section.todo .container {
+        padding: 7px 7px 40px 7px;
+    }
+    section.todo .container .title h1{
+        margin-top: 10px;
+    }
+    section.todo .container ul li{
+        font-size: 13px;
+    }
+    ul li .buttonsBlock button{
+        font-size: 10px;
+    }
+    section.todo .container .buttons .editButton{
+        bottom: 10px;
+    }
+    section.todo .container .content ul li .buttonsBlock {
+        width: 100px;
+    }
+    section.todo .container .content ul li .buttonsBlock .editButton {
+        margin-right: 4px;
+    }
+    section.todo .container .content ul li .buttonsBlock .pendingButton {
+        margin-right: 4px;
+    }
+    section.todo .container .buttons .noteForm button {
+        font-size: 10px;
+    }
+    section.todo .container .buttons .noteForm .inputTask {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 375px) {
+    
+}
+
+@media (max-width: 320px) {
+    
+}
