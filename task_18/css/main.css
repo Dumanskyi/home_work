@@ -1,0 +1,141 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  border-collapse: collapse;
+}
+body {
+  background-color: #D9E7EE;
+}
+.itemButtons {
+  border: none;
+  background-color: #004282;
+  color: white;
+  font-weight: 800;
+  border-radius: 50%;
+  padding: 5px 10px;
+}
+.container {
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 15px;
+  background-color: #004282;
+}
+section.todo {
+  padding: 20px 10px;
+}
+section.todo .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  min-height: 400px;
+  border-radius: 10px;
+  padding: 10px 10px 70px 10px;
+}
+section.todo .container .title {
+  display: flex;
+  justify-content: center;
+}
+section.todo .container .title h1 {
+  margin-top: 20px;
+  color: #fff;
+}
+section.todo .container .content {
+  width: 100%;
+}
+section.todo .container .content ul {
+  width: 100%;
+}
+section.todo .container .content ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin: 10px 0px;
+  background-color: #2B8DC7;
+  padding: 5px;
+  border-radius: 5px;
+  transition: 1s;
+}
+section.todo .container .content ul li .textBlock {
+  color: white;
+  width: calc(100% - 80px);
+}
+section.todo .container .content ul li .buttonsBlock {
+  width: 120px;
+}
+section.todo .container .content ul li .buttonsBlock .editButton {
+  border: none;
+  background-color: #004282;
+  color: white;
+  font-weight: 800;
+  border-radius: 50%;
+  padding: 5px 10px;
+  margin-right: 7px;
+}
+section.todo .container .content ul li .buttonsBlock .pendingButton {
+  border: none;
+  background-color: #004282;
+  color: white;
+  font-weight: 800;
+  border-radius: 50%;
+  padding: 5px 10px;
+  margin-right: 7px;
+  background-color: #D41F1F;
+}
+section.todo .container .content ul li .buttonsBlock .delete {
+  border: none;
+  background-color: #004282;
+  color: white;
+  font-weight: 800;
+  border-radius: 50%;
+  padding: 5px 10px;
+}
+section.todo .container .content ul li .buttonsBlock .doneButton {
+  background-color: #118B2B;
+}
+section.todo .container .content ul li:hover {
+  padding: 10px 5px;
+  background-color: #35D3A7;
+  transition: 1s;
+}
+section.todo .container .content ul li.done {
+  background-color: gray;
+}
+section.todo .container .content ul li.done .textBlock {
+  text-decoration: line-through;
+}
+section.todo .container .content ul li.done:hover {
+  background-color: lightslategray;
+}
+section.todo .container .content ul.hidden li.item.done {
+  display: none;
+}
+section.todo .container .buttons {
+  position: absolute;
+  bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+section.todo .container .buttons .noteForm .inputTask {
+  background-color: darkgrey;
+  border: none;
+  padding: 7px;
+  color: darkblue;
+  border-radius: 3px;
+}
+section.todo .container .buttons .noteForm button {
+  color: #fff;
+  background-color: #2C8EC8;
+  border: none;
+  padding: 7px;
+  border-radius: 3px;
+  transition: 1s;
+}
+section.todo .container .buttons .noteForm button:hover {
+  background-color: #35D3A7;
+  transition: 1s;
+}
