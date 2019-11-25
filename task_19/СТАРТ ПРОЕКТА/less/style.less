@@ -1,0 +1,91 @@
+// out: ../css/main.css
+
+* {
+    margin: 0;
+    padding: 0;
+    outline: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    border-collapse: collapse;
+}
+
+body {
+    background-color: #282E59;
+    h1 {
+        text-align: center;
+        color: white;
+        margin-top: 10px;
+    }
+    .container {
+        margin: 0 auto;
+        padding: 0 15px;
+        max-width: 1024px;
+        margin-top: 20px;
+        .app {
+            display: flex;
+            justify-content: space-between;
+            margin: 0 auto;
+            background-color: #EB5C2C;
+            padding: 10px;
+            border-radius: 10px;
+            .in {
+                display: flex;
+                flex-direction: column;
+                width: 300px;
+                .inputUAH {
+                    margin-right: 10px;
+                    width: 200px;
+                };
+                select {
+                    width: 200px;
+                    margin-top: 10px;
+                }
+            };
+            .buttons {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                width: 70px;
+                .convert{
+                    padding: 5px;
+                    background-color: #282E59;
+                    border-radius: 5px;
+                    color: white;
+                    border: none;
+                };
+                .reverse{
+                    margin-top: 10px;
+                    padding: 5px;
+                    background-color: #282E59;
+                    border-radius: 5px;
+                    color: white;
+                    border: none;
+                }
+            }
+            .out {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                width: 300px;
+                .text {
+                    width: 200px;
+                    height: 18px;
+                    background-color: white;
+                };
+                select {
+                    width: 200px;
+                    margin-top: 10px;
+                }
+            };
+        };
+    }
+};
+
+
+
+
+
+
+
+
