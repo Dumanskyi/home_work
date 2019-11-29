@@ -37,7 +37,7 @@ function renderHead(data, exclude){
             })
 
             for (let key in table.results[0]){
-                const td = document.createElement('td');
+                const td = document.createElement('th');
                 console.log(key)
                 td.innerText = key;
                 tableRow.append(td);

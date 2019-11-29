@@ -23,6 +23,8 @@ body table tr td {
   border: 1px solid black;
   color: darkblue;
 }
-body table tr:first-child td {
+body table tr th {
+  padding: 3px;
+  border: 1px solid black;
   color: red;
 }
