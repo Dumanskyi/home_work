@@ -28,3 +28,6 @@ body table tr th {
   border: 1px solid black;
   color: red;
 }
+.more {
+  background-color: darkblue;
+}

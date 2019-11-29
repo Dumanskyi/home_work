@@ -1,6 +1,7 @@
 
 const allTable = document.getElementById('shipsTable');
 const sortedButton = document.querySelector('.sort');
+const moreButton = document.querySelector('.more');
 
 const xhr = new XMLHttpRequest();
 let filmsData;
@@ -83,15 +84,19 @@ function starShips(data, exclude){
             }
             allTable.append(tableRow);
         })
+
         
-        if (table.next){
-        const xhr = new XMLHttpRequest();
-        xhr.open('GET', table.next);
-        xhr.send();
-        xhr.onload = function(){
-            starShips(xhr.responseText, arrExclude);
-            };
-        } 
+        moreButton.onclick = function(){
+            if (table.next){
+                const xhr = new XMLHttpRequest();
+                xhr.open('GET', table.next);
+                xhr.send();
+                xhr.onload = function(){
+                    starShips(xhr.responseText, arrExclude);
+                    };
+                } 
+        }
+        
     }
 
     sortedButton.style.backgroundColor = 'darkblue';
