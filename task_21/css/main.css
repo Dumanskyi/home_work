@@ -1,0 +1,33 @@
+* {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  text-decoration: none;
+  box-sizing: border-box;
+  border-collapse: collapse;
+}
+body h1 {
+  color: darkblue;
+  text-align: center;
+}
+body button {
+  margin: 10px;
+  padding: 5px;
+  background-color: gray;
+  color: white;
+  border: none;
+  text-decoration: bold;
+}
+body table tr td {
+  padding: 3px;
+  border: 1px solid black;
+  color: darkblue;
+}
+body table tr th {
+  padding: 3px;
+  border: 1px solid black;
+  color: red;
+}
+.more {
+  background-color: darkblue;
+}
